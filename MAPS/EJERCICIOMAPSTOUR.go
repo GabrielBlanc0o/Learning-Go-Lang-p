@@ -1,26 +1,32 @@
 package main
 
-import "golang.org/x/tour/wc"
+import (
+	"golang.org/x/tour/wc"
+)
 
 func WordCount(s string) map[string]int {
 
-	result := make(map[string]int) //crear slice map clave valor string y enteros numeros
-	word := ""                     // variable palabra vacia
-	for _, r := range s {          // iteramos sobre el rango de s para ir palabra por palabra
-		if r != ' ' { // el espacio es un separador si no es un espacio en blanco
-			word = word + string(r) // agrega un espacio
-		} else { // si no
-			if word != "" { // si no es un espacio osea si hay palabra
-				result[word]++ // meter word a clave valor map
-				word = ""      // volver a dejar vacia para q reinicie la iteracion
+	resultado := make(map[string]int)
+	palabra := ""
+
+	for _, r := range s {
+		if r != ' ' {
+			palabra += string(r)
+		} else {
+			if palabra != "" {
+				resultado[palabra]++
+				palabra = ""
 			}
+
 		}
 	}
-	//ultima palabra
-	if word != "" { // si palabra no es un espacio vacio
-		result[word]++ // q agregue al map de clave valor
+
+	if palabra != "" {
+		resultado[palabra]++
 	}
-	return result // devuelva todo
+
+	return resultado
+
 }
 
 func main() {
