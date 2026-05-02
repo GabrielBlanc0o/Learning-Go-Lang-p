@@ -29,10 +29,12 @@ func main() {
 	fmt.Println(ageOne, ageTwo, ageThree)
 
 	// bits y memoria
-//	var numeroUno int8 = 25
+	//	var numeroUno int8 = 25
 	//var numeroDos int8 = -128
-//	var numeroTres uint16 =  256    // no negativo
+	//	var numeroTres uint16 =  256    // no negativo
 
-	var valorUno
+	var valorUno float32 = 25.89
+	var valorDos float64 = 45413013154646464646.8
+	scoreTres := 1.5
 
 }
